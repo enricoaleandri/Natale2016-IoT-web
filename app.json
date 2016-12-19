@@ -1,0 +1,8 @@
+{
+  "name": "Natale2016-IoT-web",
+  "description": "This is a unique web interface for controlling my IoT gift for 2016.",
+  "repository": "https://github.com/enricoaleandri/Natale2016-IoT-web",
+  "logo": "",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}

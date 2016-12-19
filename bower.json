@@ -1,0 +1,24 @@
+{
+  "name": "Natale2016-IoT-web",
+  "version": "0.1.0",
+  "description": "This is a unique web interface for controlling my IoT gift for 2016.",
+  "license": "MIT",
+  "authors": [
+    "Enrico Aleandri"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "firebase": "^3.6.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}

@@ -20,14 +20,19 @@ To use this application you will need :
 #### Firebase
 
 So First Create Firebase App and you will need the API key and private Key to connect FE and BE.
-* Create project ![projectCreated](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/createProject.png)
-* Click on "Add Firebase to web Application" ![Add Firebase web application](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/addFirebaceWebApplication.png)
+* Create project
+![projectCreated](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/createProject.png)
+* Click on "Add Firebase to web Application"
+![Add Firebase web application](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/addFirebaceWebApplication.png)
 * Copy the config Object in the modals and past it into the view/partials/header.ejs ( insted of the config object already present);
 
 So Now you have front-end connected correctly to Firebase database, now :
-* Go on Gear icon ( top-left of screen) > **Authorization** ![Authorization](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/authorization.png)
-* Click on left menu  **Service account** ![Service account](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/serviceAccount.png)
-* And then on **Create new Service Account** ![New Serivice Account](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/createServiceAccount.png)
+* Go on Gear icon ( top-left of screen) > **Authorization**
+![Authorization](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/authorization.png)
+* Click on left menu  **Service account**
+![Service account](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/serviceAccount.png)
+* And then on **Create new Service Account**
+![New Serivice Account](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/createServiceAccount.png)
 * Fill the form with your prefered name, and desiderate role anche check the tick for provide a New private key ( as JSON ) ![new Json Private key](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/newjsonPrivateKey.png)
 * After it has been generated, it start the download, so now copy the json private key e paste it in the directory app/config;
 * Copy the full name of  json private key, and edit the file index.js changing **nalate-2016-ddb92796558b.json** in this row :

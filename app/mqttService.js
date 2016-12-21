@@ -41,11 +41,23 @@ var MqttService  = function(){
                 return false;
             }
         };
-        MqttService.prototype.sendCommand = function(command) {
-            this.client.publish(this.config.clientTopic, command, function () {
-                    console.log("Inviato comando  : "+command)
-            });
-
+        MqttService.prototype.howButtonSendCommand = function(command) {
+          this.client.publish(this.config.channels.howButton.clientTopic, command, function () {
+            console.log("Inviato comando  : "+command)
+          });
+      
+        }
+        MqttService.prototype.laserGunSendCommand = function(command) {
+          this.client.publish(this.config.channels.laserGun.clientTopic, command, function () {
+            console.log("Inviato comando  : "+command)
+          });
+      
+        }
+        MqttService.prototype.pixarLampSendCommand = function(command) {
+          this.client.publish(this.config.channels.pixarLamp.clientTopic, command, function () {
+            console.log("Inviato comando  : "+command)
+          });
+      
         }
 }
 

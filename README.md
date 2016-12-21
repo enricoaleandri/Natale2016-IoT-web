@@ -20,21 +20,21 @@ To use this application you will need :
 #### Firebase
 
 So First Create Firebase App and you will need the API key and private Key to connect FE and BE.
-* Create project
+* Create project <br>
 ![projectCreated](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/createProject.png)
-* Click on "Add Firebase to web Application"
+* Click on "Add Firebase to web Application" <br>
 ![Add Firebase web application](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/addFirebaceWebApplication.png)
-* Copy the config Object in the modals and past it into the view/partials/header.ejs ( insted of the config object already present);
+* Copy the config Object in the modals and past it into the **view/partials/header.ejs** ( instead of the config object already present);
 
 So Now you have front-end connected correctly to Firebase database, now :
-* Go on Gear icon ( top-left of screen) > **Authorization**
+* Go on Gear icon ( top-left of screen) > **Authorization** <br>
 ![Authorization](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/authorization.png)
-* Click on left menu  **Service account**
+* Click on left menu  **Service account** <br>
 ![Service account](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/serviceAccount.png)
-* And then on **Create new Service Account**
+* And then on **Create new Service Account** <br>
 ![New Serivice Account](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/createServiceAccount.png)
-* Fill the form with your prefered name, and desiderate role anche check the tick for provide a New private key ( as JSON ) ![new Json Private key](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/newjsonPrivateKey.png)
-* After it has been generated, it start the download, so now copy the json private key e paste it in the directory app/config;
+* Fill the form with your prefered name, and desidered role and  check the tick for provide a New private key( as JSON ) ![new Json Private key](https://raw.githubusercontent.com/enricoaleandri/Natale2016-IoT-web/master/docs/images/newjsonPrivateKey.png)
+* After it has been generated, it start the download, so now copy the json private key e paste it in the directory **app/config**;
 * Copy the full name of  json private key, and edit the file index.js changing **nalate-2016-ddb92796558b.json** in this row :
 ```
 try {// if dont found, it means we are deployed, so we will look for it in to HEROKU environment
@@ -49,13 +49,45 @@ var config = {
 
 };
 ```
-* Change also the databaseURL with your firebase databaseUrl;
+* Change also the **databaseURL** with your firebase databaseUrl;
 
 Now your application is perfectly configurated, if you want to test it out, go on section  [Running Locally](#running-locally), to run the
-application without deploing and check out if everythink works well.
+application without deploying and check out if everythink works well.
 
 #### Heroku App
-After you have your firebase you can proceed creating Heroku app,
+After you have your firebase you can proceed creating Heroku app, so go in your  Heroku console and
+create a new app <br>
+ ![CreateHerokuApp]() <br>
+ and choose ( or not ) the name you prefer.
+Then following the Heroku instruction from root project path:
+
+Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-command-line)<br>
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+```
+ $ heroku login
+ ```
+##### Create a new Git repository
+
+ Initialize a git repository in a new or existing directory
+```
+ $ cd my-project/
+ $ git init
+ $ heroku git:remote -a heroku-app-name
+ ```
+##### Deploy your application
+
+ Commit your code to the repository and deploy it to Heroku using Git.
+```
+ $ git add .
+ $ git commit -am "make it better"
+ $ git push heroku master
+ ```
+##### Existing Git repository
+
+ For existing repositories, simply add the heroku remote
+```
+ $ heroku git:remote -a heroku-app-name
+```
 
 ## Running Locally
 

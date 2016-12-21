@@ -8,7 +8,7 @@ module.exports = function (app, router) {
   router.post('/mqtt/howbutton', isLoggedIn, function(req, res) {
       console.log("req", req.body);
       var command = '{"action":'+req.body.action+',"content":'+req.body.content+'}';
-      mqttService.sendCommand(command);
+      mqttService.howButtonSendCommand(command);
 
       res.json({message: 'Azione '+req.body.action+' invocato con questo contenuto : '+req.body.content});
   });

@@ -28,12 +28,12 @@
     }
     function respondText(textToSend) {
       //Action 1 is for sending text 
-      callMqttService(1,textToSend );
+      callMqttService(1, textToSend );
       return ;
     }
     function respondSmile(smile) {
       //Smile is a number from 1-7 to send a different smile to HowButton
-      callMqttService(1,smile );
+      callMqttService(2, smile );
       return ;
     }
     return {

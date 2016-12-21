@@ -7,21 +7,12 @@ angular.module('CitofonoIot.pages.mobile', [])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/mobile', {
-            templateUrl: 'app/pages/homeMobile/mobile.html',
-            controller: 'mobileCtrl'
+            templateUrl: 'app/pages/pixarLamp/pixar-lamp.html',
+            controller: 'pixarLampCtrl'
         });
     }])
 
-    .controller('mobileCtrl', ['$scope', 'mqttService',
-      function($scope, mqttService) {
-        console.log("mobileCtrl done");
-      $scope.callFirstButton = function(){
-        mqttService.callFirstButton();
-      };
-      $scope.callSecondButton = function(){
-        mqttService.callSecondButton();
-      };
-      $scope.callThirdButton = function(){
-        mqttService.callThirdButton();
-      };
+    .controller('pixarLampCtrl', ['$scope', 'mqttService',
+      function($scope, mqttPixarLampService) {
+        console.log("pixarLampCtrl done");
     }]);

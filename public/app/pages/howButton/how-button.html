@@ -1,12 +1,17 @@
 <div>
+    <div>
+        <span>
+            Invia messaggio di testo :
+        </span>
+        <span>
+            <input type="text" ng-model="textMessage" maxlength="32" />
+        </span>
+    </div>
+    <div>
+        <button type="button" ng-click="sendText(textMessage)" class="btn btn-info btn-block"> Invia messaggio</button>
+    </div>
 
     <div class="bottoni-citofono primo">
         <button type="button" ng-click="callFirstButton()" class="btn btn-info btn-block"> Primo Bottone</button>
-    </div>
-    <div class="bottoni-citofono secondo">
-        <button type="button" ng-click="callSecondButton()" class="btn btn-info btn-block">Secondo Bottone</button>
-    </div>
-    <div class="bottoni-citofono terzo">
-        <button type="button" ng-click="callThirdButton()" class="btn btn-info btn-block">Terzo Bottone</button>
     </div>
 </div>

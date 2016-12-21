@@ -8,7 +8,7 @@ module.exports = function (app, router) {
   router.post('/mqtt/pixarlamp', isLoggedIn, function(req, res) {
       console.log("req", req.body);
       var command = '{"event":'+req.body.action+'}';
-      mqttService.sendCommand(command);
+      mqttService.pixarLampSendCommand(command);
 
       res.json({message: 'Azione '+req.body.action+' invocato'});
   });

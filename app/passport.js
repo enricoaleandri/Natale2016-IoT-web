@@ -47,6 +47,8 @@ module.exports = function(passport) {
                     return done(null, false,  req.flash('loginMessage', "Incorrect credential")); // req.flash is the way to set flashdata using connect-flash
 
 
+
+                req.session.applicationPath = user.application;
                 // all is well, return successful user
                 return done(null, user);
             });

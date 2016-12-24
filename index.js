@@ -12,9 +12,9 @@ var mqttService = require("./app/mqttService.js");
 
 var serviceAccount;
 try {// if dont found, it means we are deployed, so we will look for it in to HEROKU environment
-  serviceAccount = require("./app/config/nalate-2016-ddb92796558b.json");
+  serviceAccount = require("./app/config/nalate-2016-9e38b855405b.json");
 }catch(e){
-  serviceAccount = JSON.parse(process.env['nalate-2016-ddb92796558b.json']);
+  serviceAccount = JSON.parse(process.env['nalate-2016-9e38b855405b.json']);
 }
 mqttService.init(); // start connection to
 var config = {

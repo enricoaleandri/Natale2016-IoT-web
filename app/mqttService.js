@@ -4,19 +4,22 @@
 
 
 var MqttService  = function(){
+    console.log("asdasda")
         try { // if dont found, it means we are deployed, so we will look for it in to HEROKU environment
               MqttService.prototype.config = require("./config/mqttConfig.json");
         }catch(e){
+
               MqttService.prototype.config = JSON.parse(process.env['mqttConfig.json']);
         }
         MqttService.prototype.init = function(){
 
+            console.log("Int Mqtt")
             var mqtt = require('mqtt');
             var configMQTT = this.config;
 
 
             var options = configMQTT.credential;
-            var CLOUDMQTT_URL = process ? process.env.CLOUDMQTT_URL : undefined;
+            var CLOUDMQTT_URL = process && process.env ? process.env.CLOUDMQTT_URL : undefined;
 
             var client = mqtt.connect(CLOUDMQTT_URL || options);
             this.client = client;
@@ -45,19 +48,19 @@ var MqttService  = function(){
           this.client.publish(this.config.channels.howButton.clientTopic, command, function () {
             console.log("Inviato comando  : "+command)
           });
-      
+
         }
         MqttService.prototype.laserGunSendCommand = function(command) {
           this.client.publish(this.config.channels.laserGun.clientTopic, command, function () {
             console.log("Inviato comando  : "+command)
           });
-      
+
         }
         MqttService.prototype.pixarLampSendCommand = function(command) {
           this.client.publish(this.config.channels.pixarLamp.clientTopic, command, function () {
             console.log("Inviato comando  : "+command)
           });
-      
+
         }
 }
 

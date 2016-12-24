@@ -3,16 +3,16 @@
  */
 'use strict';
 
-angular.module('CitofonoIot.pages.mobile', [])
+angular.module('Natale2016IoT.pages.laserGun', [])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/mobile', {
+        $routeProvider.when('/laser-gun', {
             templateUrl: 'app/pages/laserGUN/laser-gun.html',
             controller: 'laserGunCtrl'
         });
     }])
 
-    .controller('laserGunCtrl', ['$scope', 'mqttService',
+    .controller('laserGunCtrl', ['$scope', 'mqttLaserGunService',
       function($scope, mqttLaserGunService) {
         console.log("laserGunCtrl done");
     }]);

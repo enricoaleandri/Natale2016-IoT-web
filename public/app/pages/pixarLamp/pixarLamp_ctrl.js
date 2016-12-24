@@ -3,16 +3,16 @@
  */
 'use strict';
 
-angular.module('CitofonoIot.pages.mobile', [])
+angular.module('Natale2016IoT.pages.pixarlamp', [])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/mobile', {
+        $routeProvider.when('/pixar-lamp', {
             templateUrl: 'app/pages/pixarLamp/pixar-lamp.html',
             controller: 'pixarLampCtrl'
         });
     }])
 
-    .controller('pixarLampCtrl', ['$scope', 'mqttService',
+    .controller('pixarLampCtrl', ['$scope', 'mqttPixarLampService',
       function($scope, mqttPixarLampService) {
         console.log("pixarLampCtrl done");
     }]);

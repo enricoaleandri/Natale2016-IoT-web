@@ -20,7 +20,7 @@ module.exports = function (app, passport, firebase){
             res.render('pages/login', { message: req.flash('loginMessage') });
     });
 
-    app.get('/controller', isLoggedIn, function(req, res) {
+    app.get('/controller', function(req, res) {
         res.render('pages/controller', {
             user : req.user // get the user out of session and pass to template
         });
@@ -45,8 +45,10 @@ module.exports = function (app, passport, firebase){
 function isLoggedIn(req, res, next) {
 
     // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
+    if (req.isAuthenticated()) {
+        req.locals.applicationPath = req.session.applicationPath;
         return next();
+    }
 
     // if they aren't redirect them to the home page
     res.redirect('/');

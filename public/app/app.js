@@ -11,5 +11,5 @@ angular.module('Natale2016IoT', [
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
-    $routeProvider.otherwise({redirectTo: '/mobile'});
+    $routeProvider.otherwise({redirectTo: '/home'});
 }]);

@@ -3,22 +3,27 @@
  */
 'use strict';
 
-angular.module('CitofonoIot.pages.howButton', [])
+angular.module('Natale2016IoT.pages.howButton', [])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/mobile', {
+        $routeProvider.when('/how-button', {
             templateUrl: 'app/pages/howButton/how-button.html',
             controller: 'howButtonCtrl'
         });
     }])
 
-    .controller('howButtonCtrl', ['$scope', 'mqttService',
+    .controller('howButtonCtrl', ['$scope', 'mqttHowButtonService',
       function($scope, mqttHowButtonService) {
         console.log("howButtonCtrl done");
         $scope.sendText = function(textMessage){
           mqttHowButtonService.respondText(textMessage);
         };
         $scope.sendSmile = function(smile){
-          mqttHowButtonService.respondSmile(smile);
+            var smileMapping = {
+                "happy" : 1,
+                "cute" : 2,
+                "angry": 3
+            }
+          mqttHowButtonService.respondSmile(smileMapping[smile]);
         }
     }]);
